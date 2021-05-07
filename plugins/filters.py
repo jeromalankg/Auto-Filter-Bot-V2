@@ -41,7 +41,7 @@ async def filter(client: Bot, message: Message):
         if filenames and links:
             for filename, link in zip(filenames, links):
                 btn.append(
-                    [InlineKeyboardButton(f"📺"+text=f"{filename}",url=f"{link}")]
+                    [InlineKeyboardButton(text=f"📺"+{filename}",url=f"{link}")]
                 )
         else:
             return
