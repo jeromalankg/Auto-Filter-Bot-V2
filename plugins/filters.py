@@ -61,6 +61,9 @@ async def filter(client: Bot, message: Message):
             buttons.append(
                 [InlineKeyboardButton(text="🔰 Pages 1/1 🔰",callback_data="pages")]
             )
+            buttons.append(
+                [InlineKeyboardButton(f"💢 Join Our Series channel 💢", url="https://t.me/joinchat/DRryIUi87nQ4NDc9") ]
+            )   
             await message.reply_text(
                 f"<b> Here is the result for {message.text}</b>",
                 reply_markup=InlineKeyboardMarkup(buttons)
