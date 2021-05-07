@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# @trojanzhex
+# @DraxMovieZ
 
 
 import re
@@ -62,8 +62,9 @@ async def filter(client: Bot, message: Message):
                 [InlineKeyboardButton(text="🔰 Pages 1/1 🔰",callback_data="pages")]
             )
             buttons.append(
-                [InlineKeyboardButton(f"💢 Join Our Series channel 💢", url="https://t.me/joinchat/DRryIUi87nQ4NDc9") ]
-            )   
+                [InlineKeyboardButton(f"💢 Join Our Series channel 💢", url="https://t.me/joinchat/DRryIUi87nQ4NDc9")]
+            ) 
+            
             await message.reply_text(
                 f"<b> Here is the result for {message.text}</b>",
                 reply_markup=InlineKeyboardMarkup(buttons)
@@ -79,7 +80,10 @@ async def filter(client: Bot, message: Message):
         buttons.append(
             [InlineKeyboardButton(text=f"🔰 Pages 1/{data['total']}🔰",callback_data="pages")]
         )
-
+        buttons.append(
+            [InlineKeyboardButton(f"💢 Join Our Series channel 💢", url="https://t.me/joinchat/DRryIUi87nQ4NDc9")]
+        )  
+             
         await message.reply_text(
                 f"<b> Here is the result for {message.text}</b>",
                 reply_markup=InlineKeyboardMarkup(buttons)
@@ -107,7 +111,10 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 buttons.append(
                     [InlineKeyboardButton(f"🔰 Pages {int(index)+2}/{data['total']}🔰", callback_data="pages")]
                 )
-
+                buttons.append(
+                    [InlineKeyboardButton(f"💢 Join Our Series channel 💢", url="https://t.me/joinchat/DRryIUi87nQ4NDc9")]
+                )
+                     
                 await query.edit_message_reply_markup( 
                     reply_markup=InlineKeyboardMarkup(buttons)
                 )
@@ -122,7 +129,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                     [InlineKeyboardButton(f"🔰 Pages {int(index)+2}/{data['total']}🔰", callback_data="pages")]
                 )
                 buttons.append(
-                    [ InlineKeyboardButton(f"💢 Join Our Series channel 💢", url="https://t.me/joinchat/DRryIUi87nQ4NDc9") ]
+                    [InlineKeyboardButton(f"💢 Join Our Series channel 💢", url="https://t.me/joinchat/DRryIUi87nQ4NDc9")]
                 )
                 await query.edit_message_reply_markup( 
                     reply_markup=InlineKeyboardMarkup(buttons)
@@ -144,7 +151,10 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 buttons.append(
                     [InlineKeyboardButton(f"🔰 Pages {int(index)}/{data['total']}🔰", callback_data="pages")]
                 )
-
+                buttons.append(
+                    [InlineKeyboardButton(f"💢 Join Our Series channel 💢", url="https://t.me/joinchat/DRryIUi87nQ4NDc9")]
+                )
+                    
                 await query.edit_message_reply_markup( 
                     reply_markup=InlineKeyboardMarkup(buttons)
                 )
@@ -157,6 +167,9 @@ async def cb_handler(client: Bot, query: CallbackQuery):
                 )
                 buttons.append(
                     [InlineKeyboardButton(f"🔰 Pages {int(index)}/{data['total']}🔰", callback_data="pages")]
+                )
+                buttons.append(
+                    [InlineKeyboardButton(f"💢 Join Our Series channel 💢", url="https://t.me/joinchat/DRryIUi87nQ4NDc9")]
                 )
 
                 await query.edit_message_reply_markup( 
